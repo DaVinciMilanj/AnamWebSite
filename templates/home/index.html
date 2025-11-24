@@ -6,32 +6,37 @@
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/_extra.css' %}">
 
-    {# --- SEO META TAGS --- #}
+    <!-- SEO META TAGS -->
     <meta name="description"
           content="هلدینگ آنام یک هلدینگ سرمایه‌گذاری و شتاب‌دهی استارتاپ‌هاست که با سرمایه‌گذاری خطرپذیر، منتورینگ تخصصی، فضای کار و زیرساخت، به رشد کسب‌وکارهای نوآور کمک می‌کند.">
     <meta name="robots" content="index, follow">
 
-    {# در صورت نیاز، این canonical را با دامنه اصلی خودت تنظیم کن #}
-    {# <link rel="canonical" href="https://example.com/"> #}
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'image/favicon/favicon-16x16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'image/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'image/favicon/android-chrome-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'image/favicon/android-chrome-512x512.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'image/favicon/apple-touch-icon.png' %}">
+    <link rel="manifest" href="{% static 'image/favicon/site.webmanifest' %}">
 
-    {# --- Open Graph --- #}
+    <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fa_IR">
     <meta property="og:site_name" content="Anam Holding">
     <meta property="og:title" content="هلدینگ آنام | سرمایه‌گذاری، شتاب‌دهی و توسعه استارتاپ‌ها">
     <meta property="og:description"
           content="آنـام؛ شریک استراتژیک شما در سرمایه‌گذاری، شتاب‌دهی و رشد استارتاپ‌ها و کسب‌وکارهای نوآور. ترکیبی از سرمایه‌گذاری هوشمند، منتورینگ تخصصی و زیرساخت حرفه‌ای.">
-    <meta property="og:image" content="{% static 'image/seo/anam-og.jpg' %}">
+    <meta property="og:image" content="{% static 'image/favicon/android-chrome-512x512.png' %}">
     <meta property="og:image:alt" content="هلدینگ آنام - سرمایه‌گذاری و شتاب‌دهی استارتاپ‌ها">
 
-    {# --- Twitter Card --- #}
+    <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="هلدینگ آنام | سرمایه‌گذاری، شتاب‌دهی و توسعه استارتاپ‌ها">
     <meta name="twitter:description"
           content="هلدینگ آنام با تمرکز بر سرمایه‌گذاری خطرپذیر، شتاب‌دهی، منتورینگ و زیرساخت، به استارتاپ‌ها کمک می‌کند سریع‌تر رشد کنند.">
-    <meta name="twitter:image" content="{% static 'image/seo/anam-og.jpg' %}">
+    <meta name="twitter:image" content="{% static 'image/favicon/android-chrome-512x512.png' %}">
 
-    {# --- JSON-LD STRUCTURED DATA --- #}
+    <!-- JSON-LD -->
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -64,6 +69,7 @@
         }
     </script>
 {% endblock %}
+
 
 {% block content %}
 
@@ -965,5 +971,4 @@
 {% endblock %}
 
 {% block extra_js %}
-    {# اگه برای این صفحه اسکریپت اختصاصی خواستی بعداً اینجا اضافه کن #}
 {% endblock %}

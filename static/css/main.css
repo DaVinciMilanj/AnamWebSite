@@ -45,9 +45,11 @@ body {
 
 /* --- استایل نوبار (Navbar) --- */
 .luxury-navbar {
-    transition: all 0.4s ease-in-out;
-    padding: 25px 0;
-    background: transparent;
+    position: fixed;  /* مطمئن بشیم fixed-top درست اعمال میشه */
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1100;
 }
 
 .luxury-navbar.scrolled {
@@ -110,7 +112,10 @@ body {
     color: var(--text-light);
     /* خط جداکننده طلایی سمت چپ برای زیبایی */
     border-left: 1px solid rgba(197, 160, 89, 0.2);
+
+    z-index: 1200; /* از هدر هم بالاتر بیاد */
 }
+
 
 /* رنگ دکمه ضربدر بستن منو */
 .btn-close {

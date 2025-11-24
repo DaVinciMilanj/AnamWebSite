@@ -2,14 +2,14 @@
 from pathlib import Path
 import os
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # -------------------------
 # SECURITY
 # -------------------------
-SECRET_KEY = 'CHANGE_THIS_IN_ENV'
-
-DEBUG = False   # ❗ سرور = False
+SECRET_KEY = 'django-@ana$RadyasIn%adfnj2$Sj3vj1!jndjrjbfha'
+DEBUG = True  # ❗ سرور = False
 
 ALLOWED_HOSTS = [
     '91.107.251.83',
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'zlink.apps.ZlinkConfig',
 ]
+
+ROOT_URLCONF='Config.urls'
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -88,9 +90,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'AnamFirstStep',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'USER': 'anamuser',
+        'PASSWORD': 'raYasANaM$1',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
 
         # بهترین حالت برای سرور
@@ -121,7 +123,6 @@ USE_TZ = True
 # -------------------------
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
