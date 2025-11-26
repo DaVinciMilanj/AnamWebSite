@@ -2,7 +2,7 @@ from django.views.generic import *
 from django.http import JsonResponse
 from .forms import ContractForm
 from .models import *
-
+from .utils import increase_views_cached
 from admin_panel.models import ActivityLog
 
 
@@ -10,8 +10,7 @@ class HomeView(TemplateView):
     template_name = 'home/index.html'
 
     def dispatch(self, request, *args, **kwargs):
-        # هر بار کسی صفحه اصلی رو ببینه، یک بازدید اضافه می‌کنیم
-        SiteStat.increase_views()
+        increase_views_cached()
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):

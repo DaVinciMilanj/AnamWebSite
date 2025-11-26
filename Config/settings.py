@@ -9,17 +9,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 # -------------------------
 SECRET_KEY = 'django-@ana$RadyasIn%adfnj2$Sj3vj1!jndjrjbfha'
-DEBUG = True  # ❗ سرور = False
+DEBUG = False  # ❗ سرور = False
 
 ALLOWED_HOSTS = [
     '91.107.251.83',
+    'anamholding.com',
+    'www.anamholding.com',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://91.107.251.83',
-    'https://91.107.251.83'
+    'http://anamholding.com',
+    'http://www.anamholding.com',
+    'https://anamholding.com',
+    'https://www.anamholding.com',
 ]
 
 # -------------------------
@@ -34,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'admin_panel.apps.AdminPanelConfig',
+    'errors.apps.ErrorsConfig',
     'accounts.apps.AccountsConfig',
     'home.apps.HomeConfig',
     'zlink.apps.ZlinkConfig',
@@ -100,6 +106,13 @@ DATABASES = {
             'charset': 'utf8mb4',
             'init_command': "SET sql_mode='STRICT_ALL_TABLES'"
         }
+    }
+}
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": BASE_DIR / "cache",
     }
 }
 

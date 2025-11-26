@@ -16,21 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from errors import views as errors_view
 from django.conf import settings
 from django.conf.urls.static import static
-
-
-
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls', namespace='home')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('admin_panal/', include('admin_panel.urls', namespace='admin_panel')),
-    path('zlinks/' , include('zlink.urls' , namespace='zlink'))
+    path('zlinks/', include('zlink.urls', namespace='zlink')),
+    path('core/' , include('errors.urls' , namespace='core'))
 
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = errors_view.PageNotFound.as_view()
